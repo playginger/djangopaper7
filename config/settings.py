@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'djangopaper7',  # Название БД
+        'NAME': 'django_paper7',  # Название БД
         'USER': 'postgres',  # Пользователь для подключения
         'PASSWORD': '135790eeg',
     }

@@ -6,9 +6,9 @@ from .views import HabitViewSet
 app_name = UsersConfig.name
 
 router = routers.DefaultRouter()
-router.register(r'habits', HabitViewSet)
+router.register(r'habits', HabitViewSet, basename='habits')
 
 urlpatterns = [
     path('', include(router.urls)),
-    path('habit/', HabitViewSet.as_view(), name='habit'),
+    # path('habit/', HabitViewSet.as_view(), name='habit'),
 ]

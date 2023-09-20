@@ -6,3 +6,5 @@ tzdata==2023.3
 djangorestframework~=3.14.0
 pillow
 telebot~=0.0.5
+celery~=5.3.4
+telegram~=0.0.1

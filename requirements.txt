@@ -8,3 +8,5 @@ pillow
 telebot~=0.0.5
 celery~=5.3.4
 telegram~=0.0.1
+django_celery_beat
+drf_yasg

@@ -15,6 +15,7 @@ class IsOwnerOrReadOnly(permissions.BasePermission):
 
 
 class HabitViewSet(viewsets.ModelViewSet):
+    """Эндпоинт привычек"""
     permission_classes = [IsOwnerOrReadOnly]
     serializer_class = HabitSerializer
 
@@ -28,15 +29,8 @@ def register(request):
     serializer = UserSerializer(data=request.data)
     if serializer.is_valid():
         user = serializer.save()
-        return Response({'message': 'User registered successfully'})
+        return Response({'message': 'Пользователь успешно зарегистрирован'})
     return Response(serializer.errors, status=400)
-
-
-@api_view(['POST'])
-def login(request):
-    # Здесь реализуем логику входа
-    # Возвращаем токен доступа при успешном входе в систему
-    ...
 
 
 @api_view(['GET'])

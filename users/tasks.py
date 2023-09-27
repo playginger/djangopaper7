@@ -8,3 +8,4 @@ def send_notification(habit_id):
     habit = Habit.objects.get(id=habit_id)
     # Отправка уведомления в Telegram
     send_telegram_notification(habit)
+

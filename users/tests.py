@@ -1,4 +1,5 @@
 from django.test import TestCase
+from django.urls import reverse
 from rest_framework.test import APIClient
 
 from users.models import User, Habit
@@ -36,5 +37,6 @@ class HabitTest(TestCase):
         self.client.force_authenticate(self.user)
         habit = Habit.objects.create(user=self.user, location='Test', time='12:00:00', action='test action',
                                      reward='test reward')
-        response = self.client.delete(f'habits/delete/{habit.id}/')
+        url = reverse("users:delete_habit", kwargs={"habit_id": habit.id})
+        response = self.client.delete(url)
         self.assertEqual(response.status_code, 204)

@@ -38,7 +38,7 @@ class Habit(models.Model):
             raise ValidationError("Невозможно указать вознаграждение за полезную привычку.")
         if self.is_rewarding and self.related_habit:
             raise ValidationError("Сопутствующая привычка не может быть указана как полезная привычка.")
-        if self.periodicity < 7:
+        if self.periodicity > 7:
             raise ValidationError("Привычку нельзя выполнять реже, чем раз в 7 дней.")
 
         super().save(*args, **kwargs)
